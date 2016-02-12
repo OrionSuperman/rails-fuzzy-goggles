@@ -1,0 +1,9 @@
+<form action='/sessions/create' method='post'>
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<label for='Email'>Email</label>
+<input type='text' name='Email'>
+<label for='Password'>Password</label>
+<input type='password' name='Password'>
+<button type='submit'>Log In</button>
+
+</form>
