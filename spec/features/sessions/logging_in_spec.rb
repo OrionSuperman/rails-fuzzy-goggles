@@ -10,7 +10,7 @@ RSpec.describe 'logging in' do
 	end
 	it 'logs in the user if email/password combination is valid' do
 		log_in @user
-		expect(current_path).to eq("/users/;#{@user.id}")
+		expect(current_path).to eq("/sessions/#{@user.id}")
 		expect(page).to have_text(@user.name)
 	end
 	it 'does not sign in user if email/password combination is invalid' do
