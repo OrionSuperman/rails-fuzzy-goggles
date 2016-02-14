@@ -20,9 +20,25 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def update
+    user = User.find(params[:id])
+    if params[:Name].length >2
+      user.name = params[:Name]
+    end
+    if params[:Email].length > 4
+      user.email = params[:Email]
+    end
+    if user.valid?
+      user.save
+      redirect_to '/users/' + (user.id).to_s
+    else
+      flash[:errors] = "Invalid parameters for updating user"
+      redirect_to '/users/' + (user.id).to_s
+    end
+
   end
 
   def new

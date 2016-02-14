@@ -5,8 +5,6 @@ Rails.application.routes.draw do
 
   post '/users/create' => 'users#create'
 
-  get 'users/edit'
-
   get 'users/update'
 
   get 'users/new' => 'users#new'
@@ -25,7 +23,11 @@ Rails.application.routes.draw do
 
   get '/sessions/new' => 'sessions#new'
 
+  get 'users/:id/edit' => 'users#edit'
+
   get '/sessions/:id' => 'sessions#show'
+
+  post '/users/:id' => 'users#update'
 
   get '/users/:id' => 'users#show'
 end
