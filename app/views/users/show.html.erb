@@ -2,3 +2,16 @@
 <p>User Name: <%= @user.name %> </p>
 <p>Email: <%= @user.email %> </p>
 <a href='/users/<%= @user.id %>/edit'>Edit Profile</a>
+
+<form action='/secrets/create' method='post'>
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<input type='hidden' name='id' value='<%= @user.id %>'>
+<label for='New Secret'>New Secret</label>
+<input type='text' name='New Secret'>
+<button type='submit'>Create Secret</button>
+</form>
+
+<% @secrets.each do |secret| %>
+
+<p><%= secret.content %></p>
+<% end %>

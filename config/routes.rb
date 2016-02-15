@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  get 'users/' => 'users#index'
+  post '/secrets/create' => 'secrets#create'
+
+  get '/secrets' => 'secrets#index'
+
+  get '/users/' => 'users#index'
 
   get 'users/show'
 
@@ -9,7 +13,7 @@ Rails.application.routes.draw do
 
   get 'users/new' => 'users#new'
 
-  delete 'users/delete' => 'users#destroy'
+  delete '/users/delete' => 'users#destroy'
 
   get '/sessions' => 'sessions#index'
 
