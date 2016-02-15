@@ -7,3 +7,9 @@
 <input type='text' name='Name' value='<%= @user.name %>'>
 <button type='submit'>Update</button>
 </form>
+<form action='/users/delete' method='post'>
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<input type='hidden' name='_method' value='delete'>
+<input type='hidden' name='id' value='<%= @user.id %>'> 
+<button type='submit'>Delete Account</button>
+</form>

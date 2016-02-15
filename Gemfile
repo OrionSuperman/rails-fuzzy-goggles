@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'hirb'
 gem 'spring',        group: :development
 gem 'rename'
 # Use ActiveModel has_secure_password

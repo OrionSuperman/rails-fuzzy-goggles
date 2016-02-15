@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get 'users/new' => 'users#new'
 
-  get 'users/delete'
+  delete 'users/delete' => 'users#destroy'
 
   get '/sessions' => 'sessions#index'
 
