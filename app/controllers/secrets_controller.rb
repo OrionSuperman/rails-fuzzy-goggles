@@ -11,4 +11,8 @@ class SecretsController < ApplicationController
   		redirect_to '/users/' + (params[:id]).to_s
   	end
   end
+  def destroy
+  	Secret.find(params[:secret_id]).destroy
+  	redirect_to '/users/' + (params[:user_id]).to_s
+  end
 end

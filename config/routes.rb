@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get '/secrets' => 'secrets#index'
 
+  delete '/secrets/delete' => 'secrets#destroy'
+
   get '/users/' => 'users#index'
 
   get 'users/show'
